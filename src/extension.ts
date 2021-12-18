@@ -1,6 +1,3 @@
-'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import {
   window,
   workspace,
@@ -167,6 +164,9 @@ function isLanguageSupported(languageId: string): boolean {
  * @returns {boolean}
  */
 function isIncludedFile(fileName: string): boolean {
+  if (config.filesToExcludes.some((globPattern) => globToRegexp(globPattern).test(fileName))) {
+    return false;
+  }
   return config.filesToIncludes.find((globPattern: string) => globToRegexp(globPattern).test(fileName)) !== undefined;
 }
 
