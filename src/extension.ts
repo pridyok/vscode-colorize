@@ -180,6 +180,7 @@ function canColorize(document: TextDocument): boolean { // update to use filesTo
   return isLanguageSupported(document.languageId) || isIncludedFile(document.fileName);
 }
 
+let extension: ColorizeContext;
 function handleTextSelectionChange(event: TextEditorSelectionChangeEvent, cb: () => void) {
   if (!config.isHideCurrentLineDecorations || event.textEditor !== extension.editor) {
     return cb();
@@ -310,8 +311,6 @@ function colorizeVisibleTextEditors() {
     q.push(cb => colorize(editor, cb));
   });
 }
-
-let extension: ColorizeContext;
 
 export function activate(context: ExtensionContext): ColorizeContext {
   extension = new ColorizeContext();

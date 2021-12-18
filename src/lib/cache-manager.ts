@@ -16,7 +16,7 @@ class CacheManager {
    * @param {TextEditor} editor
    * @returns {(Map<number, IDecoration[]> | null)}
    */
-  public getCachedDecorations(document: TextDocument): Map<number, IDecoration[]> | null  {
+  public getCachedDecorations(document: TextDocument): Map<number, IDecoration[]> | null {
     if (!document.isDirty && this._decorationsCache.has(document.fileName)) {
       return this._decorationsCache.get(document.fileName);
     }
@@ -32,7 +32,11 @@ class CacheManager {
    * @param {Map<number, IDecoration[]>} deco
    */
   public saveDecorations(document: TextDocument, deco: Map<number, IDecoration[]>) {
-    document.isDirty ? this._saveDirtyDecoration(document.fileName, deco) : this._saveSavedDecorations(document.fileName, deco);
+    if (document.isDirty) {
+      this._saveDirtyDecoration(document.fileName, deco);
+    } else {
+      this._saveSavedDecorations(document.fileName, deco);
+    }
   }
 
   private _saveDirtyDecoration(fileName: string, decorations: Map<number, IDecoration[]>) {

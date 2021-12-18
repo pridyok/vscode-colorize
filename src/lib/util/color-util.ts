@@ -154,7 +154,9 @@ function generateOptimalTextColor(color: Color): string {
  * @return  {[number, number, number, number]} [h,s,l,a] - The HSLa representation
  */
 function convertRgbaToHsla (r: number, g: number, b: number, a = 1): [number, number, number, number] {
-  r /= 255, g /= 255, b /= 255;
+  r /= 255;
+  g /= 255;
+  b /= 255;
 
   const max = Math.max(r, g, b), min = Math.min(r, g, b);
   let h;
@@ -175,6 +177,8 @@ function convertRgbaToHsla (r: number, g: number, b: number, a = 1): [number, nu
       break;
     case b:
       h = (r - g) / d + 4;
+      break;
+    default:
       break;
   }
   h /= 6;

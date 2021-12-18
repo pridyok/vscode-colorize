@@ -32,7 +32,6 @@ module.exports = {
     'guard-for-in': ERROR,
     'max-lines': [ERROR, { max: 1024 }],
     'max-nested-callbacks': ERROR,
-    'max-params': ERROR,
     'new-cap': ERROR,
     'no-invalid-this': ERROR,
     'no-unused-expressions': ERROR,
