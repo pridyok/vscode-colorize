@@ -1,13 +1,10 @@
-# **Colorize** [Looking for maintainers]
+# **Colorize**
 
-[![codebeat badge](https://codebeat.co/badges/aec222e1-64ae-4360-a849-d077040694ca)](https://codebeat.co/projects/github-com-kamikillerto-vscode-colorize)
-[![Build Status](https://travis-ci.org/KamiKillertO/vscode-colorize.svg?branch=master)](https://travis-ci.org/KamiKillertO/vscode-colorize)
-[![Build status](https://ci.appveyor.com/api/projects/status/db69dsx996bdnj4p/branch/develop?svg=true)](https://ci.appveyor.com/project/KamiKillertO/vscode-colorize/branch/develop)
-[![Licence](https://img.shields.io/github/license/KamiKillertO/vscode_colorize.svg)](https://github.com/KamiKillertO/vscode_colorize)
-![Version](https://vsmarketplacebadge.apphb.com/version-short/kamikillerto.vscode-colorize.svg)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/LICENSE)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/KamiKillertO.vscode-colorize.svg)](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating/kamikillerto.vscode-colorize.svg)](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
+Fork from [kamikillerto.vscode-colorize](https://github.com/KamiKillertO/vscode-colorize).
+
+Difference:
+
+- fix: [#731](https://github.com/KamiKillertO/vscode-colorize/issues/731) [#417](https://github.com/KamiKillertO/vscode-colorize/issues/417)
 
 Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
 
@@ -42,7 +39,7 @@ Configure a list of languages that should be colorized. You can learn about lang
 
 For example, if you want to colorize colors in `javascript` files, you just need to include it:
 
-```json
+```javascript
   "colorize.languages": [
     "javascript",
     // ...
@@ -101,16 +98,8 @@ _This way all @variables will be colorized_
 
 ## Roadmap
 
-- [x] Generate background for hexa colors
-- [x] Update background on color updates
-- [x] Generate background for rgb colors
-- [x] Generate background for rgba colors
-- [x] Generate background for hsl colors
-- [x] Generate background for hsla colors
-- [x] Generate background for Predefined/Cross-browser colors
-- [x] Generate background for preprocessor variables
-- [x] Generate background for css variables
-- [x] Config livereload
+- [ ] color picker
+- [ ] add color border box
 
 ## Release
 
