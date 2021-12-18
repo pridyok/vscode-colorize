@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import { describe, it } from 'mocha';
 
 import { REGEXP, DECLARATION_REGEXP } from '../../src/lib/variables/strategies/css-strategy';
 import CssExtractor from  '../../src/lib/variables/strategies/css-strategy';
@@ -7,6 +6,7 @@ import VariablesManager from  '../../src/lib/variables/variables-manager';
 import Variable from '../../src/lib/variables/variable';
 import { regex_exec } from '../test-util';
 import { generateDecorationType } from '../../src/lib/colorize-config';
+
 // Defines a Mocha test suite to group tests of similar kind together
 describe('Test variables declaration Regex', () => {
   // css variables (works for postcss too)

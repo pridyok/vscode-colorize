@@ -20,7 +20,7 @@ import Queue from './lib/queue';
 import VariablesManager from './lib/variables/variables-manager';
 import CacheManager from './lib/cache-manager';
 import EditorManager from './lib/editor-manager';
-import * as globToRegexp from 'glob-to-regexp';
+import globToRegexp from 'glob-to-regexp';
 import VariableDecoration from './lib/variables/variable-decoration';
 import { getColorizeConfig, ColorizeConfig } from './lib/colorize-config';
 
