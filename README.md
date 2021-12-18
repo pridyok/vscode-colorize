@@ -1,4 +1,4 @@
-# __Colorize__ [Looking for maintainers]
+# **Colorize** [Looking for maintainers]
 
 [![codebeat badge](https://codebeat.co/badges/aec222e1-64ae-4360-a849-d077040694ca)](https://codebeat.co/projects/github-com-kamikillerto-vscode-colorize)
 [![Build Status](https://travis-ci.org/KamiKillertO/vscode-colorize.svg?branch=master)](https://travis-ci.org/KamiKillertO/vscode-colorize)
@@ -11,7 +11,7 @@
 
 Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
 
-This extension  your styles files looking for colors and generate a colored background (using the color) for each of them.
+This extension your styles files looking for colors and generate a colored background (using the color) for each of them.
 
 ![](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo.gif)
 
@@ -49,7 +49,7 @@ For example, if you want to colorize colors in `javascript` files, you just need
   ]
 ```
 
-### colorize.enable_search_variables _BOOLEAN_ _default: true
+### colorize.enable*search_variables \_BOOLEAN* \_default: true
 
 By default colorize read and parse all files, in your workspace, that are targeted by the settings [colorize.languages](#colorizelanguages), [colorize.include](#colorizeinclude), and [colorize.exlude](#colorizeexclude) to extract extract all variables. Thanks to this behavior all variables will have colored background even if you never open the file containing the declaration. _⚠️ This setting can slown down vscode at opening_
 
@@ -61,11 +61,11 @@ Configure glob patterns for including files and folders. By default Colorize is 
 
 Configure glob patterns for excluding files and folders. Colorize will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
 
-### colorize.hide_current_line_decorations _BOOLEAN_ _default: true_
+### colorize.hide*current_line_decorations \_BOOLEAN* _default: true_
 
 By default, decorations for the current line are hidden. Set this setting to `false` if you want to deactivate this behavior.
 
-### colorize.colorized_colors _ARRAY_
+### colorize.colorized*colors \_ARRAY*
 
 This options allow you to enable/disable colorization for a type of colors.
 

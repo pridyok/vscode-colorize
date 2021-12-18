@@ -15,10 +15,7 @@
     "Missing Word": "Disable",
     "Make I uppercase": "Warning"
   },
-  "languageIDs": [
-    "markdown",
-    "plaintext"
-  ],
+  "languageIDs": ["markdown", "plaintext"],
   "ignoreRegExp": [
     "/\\(.*\\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)\\)/g",
     "/((http|https|ftp|git)\\S*)/g"
