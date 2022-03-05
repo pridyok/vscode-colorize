@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.1
+
+### Fix
+
+- fix: haven't check color front boundary #574
+
 ## 0.12.0
 
 ### Changed
