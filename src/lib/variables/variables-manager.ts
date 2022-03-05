@@ -1,3 +1,14 @@
+import * as fs from 'fs';
+import {
+  workspace,
+  window,
+  StatusBarAlignment,
+  StatusBarItem,
+  Uri,
+  ThemeColor,
+  TextEditorDecorationType,
+} from 'vscode';
+
 import Variable from './variable';
 import VariableDecoration from './variable-decoration';
 import VariablesExtractor from './variables-extractor';
@@ -6,8 +17,7 @@ import './strategies/css-strategy';
 import './strategies/less-strategy';
 import './strategies/sass-strategy';
 import './strategies/stylus-strategy';
-import * as fs from 'fs';
-import { workspace, window, StatusBarAlignment, StatusBarItem, Uri, ThemeColor, TextEditorDecorationType } from 'vscode';
+
 import { DocumentLine, LineExtraction } from '../util/color-util';
 
 class VariablesManager {
@@ -29,33 +39,34 @@ class VariablesManager {
       const variablesCount: number = VariablesExtractor.getVariablesCount();
       this.statusBar.text = `Colorize: ${variablesCount} variables`;
     } catch (error) {
-      this.statusBar.color = new ThemeColor('errorForeground');
+      this.statusBar.backgroundColor = new ThemeColor('statusBarItem.errorBackground');
       this.statusBar.text = 'Colorize: $(circle-slash) Variables extraction fail';
     }
     return;
   }
 
   private textToDocumentLine(text: string): DocumentLine[] {
-    return text.split(/\n/)
-      .map((text, index) => Object({
-        'text': text,
-        'line': index
-      }));
+    return text.split(/\n/).map((text, index) =>
+      Object({
+        text,
+        line: index,
+      }),
+    );
   }
 
   private extractFilesVariable(files: Uri[]) {
-    return files.map(async(file: Uri) => {
+    return files.map(async (file: Uri) => {
       const text = fs.readFileSync(file.fsPath, 'utf8');
       const content: DocumentLine[] = this.textToDocumentLine(text);
       return VariablesExtractor.extractDeclarations(file.fsPath, content);
     });
   }
 
-  public findVariablesDeclarations(fileName, fileLines: DocumentLine[]): Promise <number[]> {
+  public findVariablesDeclarations(fileName, fileLines: DocumentLine[]): Promise<number[]> {
     return VariablesExtractor.extractDeclarations(fileName, fileLines);
   }
 
-  public findVariables(fileName, fileLines: DocumentLine[]): Promise <LineExtraction[]> {
+  public findVariables(fileName, fileLines: DocumentLine[]): Promise<LineExtraction[]> {
     return VariablesExtractor.extractVariables(fileName, fileLines);
   }
 
@@ -63,7 +74,11 @@ class VariablesManager {
     return VariablesExtractor.findVariable(variable);
   }
 
-  public generateDecoration(variable: Variable, line: number, decorationFn: (Color) => TextEditorDecorationType): VariableDecoration {
+  public generateDecoration(
+    variable: Variable,
+    line: number,
+    decorationFn: (Color) => TextEditorDecorationType,
+  ): VariableDecoration {
     return new VariableDecoration(variable, line, decorationFn);
   }
 
