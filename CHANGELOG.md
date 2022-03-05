@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.0
+
+### Changed
+
+- optimize build size
+
 ## 0.11.1
 
 ### Fix
