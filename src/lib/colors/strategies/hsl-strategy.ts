@@ -1,15 +1,15 @@
 import Color from './../color';
 import ColorExtractor from '../color-extractor';
 import { convertHslaToRgba } from '../../util/color-util';
-import { DOT_VALUE, ALPHA, EOL } from '../../util/regexp';
+import { DOT_VALUE, ALPHA, EOL, BOUNDARY_FRONT } from '../../util/regexp';
 import ColorStrategy from './__strategy-base';
 
 const R_HUE = `\\d*${DOT_VALUE}?`;
 const R_SATURATION = `(?:\\d{1,3}${DOT_VALUE}?|${DOT_VALUE})%`;
 const R_LUMINANCE = R_SATURATION;
 
-export const REGEXP = new RegExp(`((?:hsl\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*\\))|(?:hsla\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*,\\s*${ALPHA}\\s*\\)))${EOL}`, 'gi');
-export const REGEXP_ONE = new RegExp(`^((?:hsl\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*\\))|(?:hsla\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*,\\s*${ALPHA}\\s*\\)))${EOL}`, 'i');
+export const REGEXP = new RegExp(`${BOUNDARY_FRONT}((?:hsl\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*\\))|(?:hsla\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*,\\s*${ALPHA}\\s*\\)))${EOL}`, 'gi');
+export const REGEXP_ONE = new RegExp(`^${BOUNDARY_FRONT}((?:hsl\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*\\))|(?:hsla\\(\\s*${R_HUE}\\s*,\\s*${R_SATURATION}\\s*,\\s*${R_LUMINANCE}\\s*,\\s*${ALPHA}\\s*\\)))${EOL}`, 'i');
 // export const REGEXP_ONE = /^((?:hsl\(\d*\s*,\s*\d{1,3}%\s*,\s*\d{1,3}%\))|(?:hsla\(\d*\s*,\s*(?:\d{1,3}%\s*,\s*){2}(?:[0-1]|1\.0|[0](?:\.\d+){0,1}|(?:\.\d+))\)))(?:$|"|'|,| |;|\)|\r|\n)/i;
 
 /**

@@ -23,9 +23,8 @@ import { mutEditedLine } from './lib/util/mut-edited-line';
 import { equals } from './lib/util/array';
 import TasksRunner from './lib/tasks-runner';
 
-// eslint-disable-next-line
 // @ts-ignore
-const taskRuner: TasksRunner = new TasksRunner();
+const taskRunner: TasksRunner = new TasksRunner();
 
 const clearDecoration = (decoration: IDecoration) => decoration.dispose();
 
@@ -246,14 +245,14 @@ function textDocumentUpdated(event: TextDocumentChangeEvent) {
       extension.nbLine = extension.editor.document.lineCount;
     }
     disposeDecorationsForEditedLines(editedLine, extension);
-    taskRuner.run(updateDecorations);
+    taskRunner.run(updateDecorations);
   }
 }
 
 function setupEventListeners(context: ExtensionContext): void {
   // window.onDidChangeTextEditorSelection((event) => q.push((cb) => handleTextSelectionChange(event, cb)), null, context.subscriptions);
   workspace.onDidChangeTextDocument(textDocumentUpdated, null, context.subscriptions);
-  window.onDidChangeTextEditorVisibleRanges(() => taskRuner.run(handleVisibleRangeEvent), null, context.subscriptions);
+  window.onDidChangeTextEditorVisibleRanges(() => taskRunner.run(handleVisibleRangeEvent), null, context.subscriptions);
   // window.onDidChangeTextEditorVisibleRanges(handleVisibleRangeEvent, null, context.subscriptions);
 }
 
