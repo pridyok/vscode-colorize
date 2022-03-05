@@ -6,6 +6,10 @@
 
 - optimize build size
 
+### Fixed
+
+- colorize.exclude doesn't work #731 #417
+
 ## 0.11.1
 
 ### Fix

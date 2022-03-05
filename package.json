@@ -22,12 +22,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kamikillerto/vscode-colorize.git"
+    "url": "https://github.com/tjx666/vscode-colorize"
   },
   "bugs": {
     "url": "https://github.com/kamikillerto/vscode-colorize/issues"
   },
-  "homepage": "https://github.com/kamikillerto/vscode-colorize/blob/master/README.MD",
+  "homepage": "https://github.com/tjx666/vscode-colorize",
   "galleryBanner": {
     "theme": "light"
   },

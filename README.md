@@ -2,9 +2,7 @@
 
 Fork from [kamikillerto.vscode-colorize](https://github.com/KamiKillertO/vscode-colorize).
 
-Difference:
-
-- fix: [#731](https://github.com/KamiKillertO/vscode-colorize/issues/731) [#417](https://github.com/KamiKillertO/vscode-colorize/issues/417)
+My Version start from: v0.12.0
 
 Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
 
@@ -99,7 +97,8 @@ _This way all @variables will be colorized_
 ## Roadmap
 
 - [ ] color picker
-- [ ] add color border box
+- [ ] Command to toggle colorizer based on file #596
+
 
 ## Release
 
