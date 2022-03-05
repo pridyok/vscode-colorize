@@ -1,8 +1,14 @@
 .vscode/**
 .vscode-test/**
-out/test/**
-test/**
-src/**
+assets/screenshots
+src/
+test/
+out/test/
 **/*.map
+node_modules/**/*.md
+node_modules/**/*.yml
+node_modules/**/*.test.*
+
 .gitignore
+.eslintignore
 tsconfig.json
