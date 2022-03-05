@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-03-06 V0.12.2
+
+### Fix
+
+- fix: Status bar item has bad contrast #503
+
 ## 0.12.1
 
 ### Fix
