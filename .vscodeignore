@@ -5,10 +5,11 @@ src/
 test/
 out/test/
 **/*.map
-node_modules/**/*.md
-node_modules/**/*.yml
-node_modules/**/*.test.*
 
 .gitignore
 .eslintignore
 tsconfig.json
+
+node_modules
+!node_modules/glob-to-regexp/index.js
+!node_modules/glob-to-regexp/package.json
