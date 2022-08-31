@@ -1,18 +1,22 @@
 # **Colorize**
 
-Fork from [kamikillerto.vscode-colorize](https://github.com/KamiKillertO/vscode-colorize).
-
-My Version start from: v0.12.0
-
 Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
 
 This extension your styles files looking for colors and generate a colored background (using the color) for each of them.
 
-![](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo.gif)
+![demo](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo.gif)
 
-![](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo_variables.gif)
+![variables demo](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo_variables.gif)
 
-💡 [How to enable variables support](#colorizecolorized_variables)
+💡 [How to enable variables support](#colorize.colorized_variables)
+
+## Modified
+
+This project is forked from [kamikillerto.vscode-colorize](https://github.com/KamiKillertO/vscode-colorize).
+
+My Version start from: v0.12.0
+
+- fix issues: #417, #503, #574, #731
 
 ## Features
 
@@ -31,7 +35,9 @@ This extension your styles files looking for colors and generate a colored backg
 The following Visual Studio Code settings are available for the Colorize extension.
 These can be set in user preferences `(cmd+,)` or workspace settings `(.vscode/settings.json)`.
 
-### colorize.languages _ARRAY_
+### colorize.languages
+
+Type: `Array`
 
 Configure a list of languages that should be colorized. You can learn about languages at <https://code.visualstudio.com/docs/languages/overview>.
 
@@ -44,23 +50,35 @@ For example, if you want to colorize colors in `javascript` files, you just need
   ]
 ```
 
-### colorize.enable*search_variables \_BOOLEAN* \_default: true
+### colorize.enable_search_variables
 
-By default colorize read and parse all files, in your workspace, that are targeted by the settings [colorize.languages](#colorizelanguages), [colorize.include](#colorizeinclude), and [colorize.exlude](#colorizeexclude) to extract extract all variables. Thanks to this behavior all variables will have colored background even if you never open the file containing the declaration. _⚠️ This setting can slown down vscode at opening_
+Type: `boolean`\
+Default: `true`
+
+By default colorize read and parse all files, in your workspace, that are targeted by the settings [colorize.languages](#colorize.languages), [colorize.include](#colorize.include), and [colorize.exclude](#colorize.exclude) to extract extract all variables. Thanks to this behavior all variables will have colored background even if you never open the file containing the declaration. _⚠️ This setting can slow down vscode at opening_
 
 ### colorize.include
+
+Type: `Array`
 
 Configure glob patterns for including files and folders. By default Colorize is enable for files matching one the languages defined in the `colorize.languages` config, with this config you can enable colorize for other files or folders. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
 
 ### colorize.exclude
 
+Type: `Array`
+
 Configure glob patterns for excluding files and folders. Colorize will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
 
-### colorize.hide*current_line_decorations \_BOOLEAN* _default: true_
+### colorize.hide_current_line_decorations
+
+Type: `boolean`\
+Default: `true`
 
 By default, decorations for the current line are hidden. Set this setting to `false` if you want to deactivate this behavior.
 
-### colorize.colorized*colors \_ARRAY*
+### colorize.colorized.colors
+
+Type: `Array`
 
 This options allow you to enable/disable colorization for a type of colors.
 
@@ -82,6 +100,8 @@ For example, if you want to only colorize hexa colors (`#fff, #ffffff, 0xFFF`) i
 
 ### colorize.colorized_variables
 
+Type: `Array`
+
 This options allow you to enable/disable colorization for a type of variables.
 
 For example if you use less in your project you setup the option like this
@@ -94,11 +114,10 @@ For example if you use less in your project you setup the option like this
 
 _This way all @variables will be colorized_
 
-## Roadmap
+## TODO
 
 - [ ] color picker
 - [ ] Command to toggle colorizer based on file #596
-
 
 ## Release
 

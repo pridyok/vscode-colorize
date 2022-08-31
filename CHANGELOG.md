@@ -1,5 +1,12 @@
 # Changelog
 
+## 2022-09-01 V0.12.3
+
+### Changed
+
+- upgrade dependencies
+- readme typo
+
 ## 2022-03-06 V0.12.2
 
 ### Fix
