@@ -1,5 +1,7 @@
 # **Colorize**
 
+![test](https://github.com/tjx666/vscode-colorize/actions/workflows/test.yml/badge.svg)
+
 Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
 
 This extension your styles files looking for colors and generate a colored background (using the color) for each of them.
