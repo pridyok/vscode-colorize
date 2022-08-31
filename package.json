@@ -182,9 +182,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "watch": "tsc -watch -p .",
+    "vscode:prepublish": "npm run compile:ext",
+    "watch": "tsc -watch -p tsconfig.build.json",
     "compile": "tsc -p .",
+    "compile:ext": "tsc -p tsconfig.build.json",
     "lint": "eslint .",
     "test": "npm run compile && node ./out/test/runTest.js"
   },
