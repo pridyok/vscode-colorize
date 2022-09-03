@@ -2,7 +2,7 @@
   "name": "vscode-colorize-plus",
   "displayName": "colorize",
   "description": "A vscode extension to help visualize css colors in files.",
-  "version": "0.12.3",
+  "version": "0.12.4",
   "publisher": "YuTengjing",
   "license": "Apache-2.0",
   "icon": "assets/logo/logo.png",
@@ -32,7 +32,7 @@
     "theme": "light"
   },
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/src/extension",
   "contributes": {

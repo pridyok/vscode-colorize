@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-09-03 V0.12.4
+
+### Changed
+
+- change activationEvents from `*` to `onStartupFinished`
+
 ## 2022-09-01 V0.12.3
 
 ### Changed
