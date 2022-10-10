@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-10-11 V0.12.5
+
+### Fix
+
+- color after `=` doesn't colorized
+
 ## 2022-09-03 V0.12.4
 
 ### Changed
