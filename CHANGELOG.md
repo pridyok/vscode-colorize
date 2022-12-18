@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-12-19 V0.12.6
+
+### Changed
+
+- use esbuild to bundle extension, reduce file size and improve performance
+
 ## 2022-10-11 V0.12.5
 
 ### Fix
