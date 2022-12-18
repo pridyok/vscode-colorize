@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "icon": "assets/logo/logo.png",
   "engines": {
-    "vscode": "^1.72.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
@@ -34,7 +34,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/extension.js",
   "contributes": {
     "configuration": {
       "title": "Colorize",
@@ -182,29 +182,34 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile:ext",
-    "watch": "tsc -watch -p tsconfig.build.json",
-    "compile": "tsc -p .",
-    "compile:ext": "tsc -p tsconfig.build.json",
-    "lint": "eslint .",
-    "test": "npm run compile && node ./out/test/runTest.js"
+    "vscode:prepublish": "pnpm esbuild:base --minify",
+    "preinstall": "npx only-allow pnpm",
+    "clear": "rimraf ./out",
+    "esbuild:base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild:watch": "pnpm esbuild:base --sourcemap --watch",
+    "compile:test": "pnpm clear && tsc -p .",
+    "lint": "eslint src --ext ts",
+    "test": "pnpm compile:test && node ./out/test/runTest.js",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
   },
   "devDependencies": {
-    "@types/chai": "^4.3.3",
+    "@types/chai": "^4.3.4",
     "@types/glob-to-regexp": "^0.4.1",
-    "@types/mocha": "^10.0.0",
-    "@types/node": "^16.11.64",
-    "@types/vscode": "^1.72.0",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
-    "@vscode/test-electron": "^2.1.5",
-    "chai": "^4.3.6",
-    "eslint": "^8.25.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.17",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "@vscode/test-electron": "^2.2.1",
+    "chai": "^4.3.7",
+    "esbuild": "^0.16.9",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "glob": "8.0.3",
-    "mocha": "^10.0.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4"
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "glob-to-regexp": "^0.4.1"

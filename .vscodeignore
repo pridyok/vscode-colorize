@@ -3,13 +3,14 @@
 assets/screenshots
 src/
 test/
+out/src
 out/test/
+.github
 **/*.map
 
 .gitignore
 .eslintignore
-tsconfig.json
+tsconfig*.json
+pnpm-lock.yaml
 
 node_modules
-!node_modules/glob-to-regexp/index.js
-!node_modules/glob-to-regexp/package.json
