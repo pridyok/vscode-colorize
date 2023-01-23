@@ -161,7 +161,9 @@ function isIncludedFile(fileName: string): boolean {
   if (config.filesToExcludes.some((globPattern) => globToRegexp(globPattern).test(fileName))) {
     return false;
   }
-  return config.filesToIncludes.find((globPattern: string) => globToRegexp(globPattern).test(fileName)) !== undefined;
+  return config.filesToIncludes.some((globPattern: string) =>
+    globToRegexp(globPattern).test(fileName),
+  );
 }
 
 /**
