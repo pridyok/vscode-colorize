@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-01-23 V0.12.7
+
+### Fixed
+
+- [#890](https://github.com/KamiKillertO/vscode-colorize/issues/890)
+
 ## 2022-12-19 V0.12.6
 
 ### Changed
