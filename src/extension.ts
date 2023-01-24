@@ -152,15 +152,22 @@ function isLanguageSupported(languageId: string): boolean {
 }
 
 /**
+ * Check if the file is the `colorize.exclude` setting
+ *
+ * @param {string} fileName A valid filename (path to the file)
+ * @returns {boolean}
+ */
+function isExcludedFle(fileName: string): boolean {
+  return config.filesToExcludes.some((globPattern) => globToRegexp(globPattern).test(fileName))
+}
+
+/**
  * Check if the file is the `colorize.include` setting
  *
  * @param {string} fileName A valid filename (path to the file)
  * @returns {boolean}
  */
 function isIncludedFile(fileName: string): boolean {
-  if (config.filesToExcludes.some((globPattern) => globToRegexp(globPattern).test(fileName))) {
-    return false;
-  }
   return config.filesToIncludes.some((globPattern: string) =>
     globToRegexp(globPattern).test(fileName),
   );
@@ -172,8 +179,12 @@ function isIncludedFile(fileName: string): boolean {
  * @param {TextDocument} document The document to test
  * @returns {boolean}
  */
-function canColorize(document: TextDocument): boolean { // update to use filesToExcludes. Remove `isLanguageSupported` ? checking path with file extension or include glob pattern should be enough
-  return isLanguageSupported(document.languageId) || isIncludedFile(document.fileName);
+function canColorize(document: TextDocument): boolean {
+  // update to use filesToExcludes. Remove `isLanguageSupported` ? checking path with file extension or include glob pattern should be enough
+  return (
+    !isExcludedFle(document.fileName) &&
+    (isLanguageSupported(document.languageId) || isIncludedFile(document.fileName))
+  );
 }
 
 let extension: ColorizeContext;
