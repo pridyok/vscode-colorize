@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-01-24 V0.12.8
+
+### Fixed
+
+- can't exclude file match the `colorize.languages` setting
+
 ## 2022-01-23 V0.12.7
 
 ### Fixed
