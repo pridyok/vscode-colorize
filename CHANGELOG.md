@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-01-24 V0.12.9
+
+### Fixed
+
+- minimatch replace glob-to-regexp fix glob match on windows
+
 ## 2022-01-24 V0.12.8
 
 ### Fixed
