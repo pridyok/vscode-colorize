@@ -17,7 +17,7 @@ import Queue from './lib/queue';
 import VariablesManager from './lib/variables/variables-manager';
 import CacheManager from './lib/cache-manager';
 import EditorManager from './lib/editor-manager';
-import globToRegexp from 'glob-to-regexp';
+import minimatch from 'minimatch';
 import VariableDecoration from './lib/variables/variable-decoration';
 import { getColorizeConfig, ColorizeConfig } from './lib/colorize-config';
 
@@ -158,7 +158,7 @@ function isLanguageSupported(languageId: string): boolean {
  * @returns {boolean}
  */
 function isExcludedFle(fileName: string): boolean {
-  return config.filesToExcludes.some((globPattern) => globToRegexp(globPattern).test(fileName))
+  return config.filesToExcludes.some((globPattern) => minimatch(fileName, globPattern))
 }
 
 /**
@@ -168,9 +168,7 @@ function isExcludedFle(fileName: string): boolean {
  * @returns {boolean}
  */
 function isIncludedFile(fileName: string): boolean {
-  return config.filesToIncludes.some((globPattern: string) =>
-    globToRegexp(globPattern).test(fileName),
-  );
+  return config.filesToIncludes.some((globPattern: string) => minimatch(fileName, globPattern));
 }
 
 /**

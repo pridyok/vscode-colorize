@@ -212,6 +212,6 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "glob-to-regexp": "^0.4.1"
+    "minimatch": "^6.1.6"
   }
 }
