@@ -3,13 +3,9 @@ export interface IStrategy {
 }
 
 export class Extractor {
-  public strategies: IStrategy[];
+  public strategies: IStrategy[] = [];
   public strategyMap: Map<string, IStrategy> = new Map();
-  protected enabledStrategies: IStrategy[];
-
-  constructor() {
-    this.strategies = [];
-  }
+  protected enabledStrategies: IStrategy[] = [];
 
   public enableStrategies(strategiesToEnable: string[]): void {
     this.enabledStrategies = this.strategies.filter((strategy) => {
