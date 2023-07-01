@@ -8,13 +8,17 @@
       "script": "esbuild:watch",
       "problemMatcher": "$esbuild-watch",
       "isBackground": true,
-      "presentation": {
-        "reveal": "never"
-      },
       "group": {
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "test-compile-watch",
+      "type": "npm",
+      "script": "compile:test:watch",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": true,
     }
   ]
 }

@@ -39,7 +39,7 @@
         "**/.vscode-insiders/extensions/",
         "**/.vscode/extensions/"
       ],
-      "preLaunchTask": "${defaultBuildTask}"
+      "preLaunchTask": "test-compile-watch"
     }
   ]
 }
