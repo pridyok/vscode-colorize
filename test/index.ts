@@ -1,26 +1,21 @@
-import glob from 'glob';
+import { glob } from 'glob';
 import Mocha from 'mocha';
 import path from 'path';
 
 export function run(testsRoot: string, cb: (error: any, failures?: number) => void): void {
-    const mocha = new Mocha({ color: true });
+  const mocha = new Mocha({ color: true });
 
-    glob('**/**.test.js', { cwd: testsRoot }, (err, files) => {
-        if (err) {
-            cb(err);
-            return;
-        }
+  glob('**/**.test.js', { cwd: testsRoot })
+    .then((files) => {
+      for (const f of files) mocha.addFile(path.resolve(testsRoot, f));
 
-        // Add files to the test suite
-        for (const f of files) mocha.addFile(path.resolve(testsRoot, f));
-
-        try {
-            // Run the mocha test
-            mocha.run((failures) => {
-                cb(null, failures);
-            });
-        } catch (error) {
-            cb(error);
-        }
-    });
+      try {
+        mocha.run((failures) => {
+          cb(null, failures);
+        });
+      } catch (error) {
+        cb(error);
+      }
+    })
+    .catch((error) => cb(error));
 }
