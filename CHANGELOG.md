@@ -1,5 +1,11 @@
 # Changelog
 
+## 2023-07-02 V0.12.10
+
+### Changed
+
+- update dep `minimatch`
+
 ## 2022-01-24 V0.12.9
 
 ### Fixed
