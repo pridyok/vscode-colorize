@@ -192,7 +192,9 @@
     "lint": "eslint src --ext ts",
     "test": "pnpm compile:test && node ./out/test/runTest.js",
     "package": "vsce package --no-dependencies",
-    "publish": "vsce publish --no-dependencies"
+    "release": "bumpp -c \"release: v%s\" package.json",
+    "publish:vs-marketplace": "vsce publish --no-dependencies",
+    "publish:open-vsx": "ovsx publish --no-dependencies"
   },
   "devDependencies": {
     "@types/chai": "^4.3.5",
@@ -203,12 +205,15 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "@vscode/test-electron": "^2.3.3",
+    "@vscode/vsce": "^2.19.0",
+    "bumpp": "^9.1.1",
     "chai": "^4.3.7",
     "esbuild": "^0.18.11",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "glob": "10.3.1",
     "mocha": "^10.2.0",
+    "ovsx": "^0.8.1",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
