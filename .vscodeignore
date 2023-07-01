@@ -3,8 +3,8 @@
 assets/screenshots
 src/
 test/
-out/src
-out/test/
+out
+!out/src/extension.js
 .github
 **/*.map
 
