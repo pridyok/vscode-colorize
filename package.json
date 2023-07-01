@@ -210,6 +210,7 @@
     "glob": "10.3.1",
     "mocha": "^10.2.0",
     "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
