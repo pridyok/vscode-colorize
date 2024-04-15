@@ -247,6 +247,15 @@ function executeHSLProperFormula(tmp_1: number, tmp_2: number, value: number): n
   return res;
 }
 
+/**
+ * Convert percentage-based alpha values to decimal values
+ *
+ * @private
+ * @param {number} alpha
+ * @returns {number}
+ */
+const parseAlpha = (alpha: number): number => alpha > 1 ? alpha / 100 : alpha
+
 export default ColorUtil;
 
 export {
@@ -257,5 +266,6 @@ export {
   generateOptimalTextColor,
   flattenLineExtractionsFlatten,
   LineExtraction,
-  DocumentLine
+  DocumentLine,
+  parseAlpha,
 };
