@@ -3,7 +3,11 @@
   "displayName": "colorize (altered)",
   "description": "A vscode extension to help visualize css colors in files.",
   "version": "0.12.13",
-  "publisher": "Altered Pixels",
+  "author": {
+    "name": "Altered Pixels",
+    "url": "https://alteredpixels.io"
+  },
+  "publisher": "AlteredPixels",
   "license": "Apache-2.0",
   "icon": "assets/logo/logo.png",
   "engines": {
@@ -22,12 +26,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjx666/vscode-colorize"
+    "url": "https://github.com/pridyok/vscode-colorize"
   },
   "bugs": {
-    "url": "https://github.com/kamikillerto/vscode-colorize/issues"
+    "url": "https://github.com/pridyok/vscode-colorize/issues"
   },
-  "homepage": "https://github.com/tjx666/vscode-colorize",
+  "homepage": "https://github.com/pridyok/vscode-colorize",
   "galleryBanner": {
     "theme": "light"
   },
