@@ -8,7 +8,9 @@ import * as vscode from 'vscode';
 import * as colorize from '../src/extension';
 import * as path from 'path';
 
-const ext: vscode.Extension<colorize.ColorizeContext> = vscode.extensions.getExtension('YuTengjing.vscode-colorize-plus');
+const ext: vscode.Extension<colorize.ColorizeContext> = vscode.extensions.getExtension(
+  'AlteredPixels.vscode-altered-colorize',
+);
 const fixtureSourcePath = path.join(__dirname, '..', '..', 'test', 'fixtures');
 
 describe('Extension', () => {

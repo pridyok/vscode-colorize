@@ -6,6 +6,11 @@ import { regex_exec } from '../test-util';
 describe('Test hsl(a) color Regex', () => {
   it('Should match a simple hsl color', function () {
     assert.equal(regex_exec('hsl(200, 10%, 10%)', REGEXP)[1], 'hsl(200, 10%, 10%)');
+    assert.equal(regex_exec('hsl(200deg, 10%, 10%)', REGEXP)[1], 'hsl(200deg, 10%, 10%)');
+    assert.equal(regex_exec('hsl(200 10% 10%)', REGEXP)[1], 'hsl(200 10% 10%)');
+    assert.equal(regex_exec('hsl(200deg 10% 10%)', REGEXP)[1], 'hsl(200deg 10% 10%)');
+    assert.equal(regex_exec('hsl(200 10% 10% / 0.5)', REGEXP)[1], 'hsl(200 10% 10% / 0.5)');
+    assert.equal(regex_exec('hsl(200 10% 10% / 50%)', REGEXP)[1], 'hsl(200 10% 10% / 50%)');
   });
   it('Should match a simple hsla color', function () {
     assert.equal(regex_exec('hsla(200, 10%, 10%, 0)', REGEXP)[1], 'hsla(200, 10%, 10%, 0)');
@@ -19,6 +24,7 @@ describe('Test hsl(a) color Regex', () => {
     assert.isNull(regex_exec('hsl(123, 100%, 1)', REGEXP));
     assert.isNull(regex_exec('hsl(123, 100, 1%)', REGEXP));
     assert.isNull(regex_exec('hsl(123%, 100%, 1%)', REGEXP));
+    assert.isNull(regex_exec('hsl(123, 100%, 1% / 0.5)', REGEXP));
   });
   it('Should match inside a string', function() {
     assert.equal(regex_exec('"hsl(123, 10%, 10%)"', REGEXP)[1], 'hsl(123, 10%, 10%)');
