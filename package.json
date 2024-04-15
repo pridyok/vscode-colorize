@@ -1,9 +1,9 @@
 {
-  "name": "vscode-colorize-plus",
-  "displayName": "colorize",
+  "name": "vscode-altered-colorize",
+  "displayName": "colorize (altered)",
   "description": "A vscode extension to help visualize css colors in files.",
   "version": "0.12.13",
-  "publisher": "YuTengjing",
+  "publisher": "Altered Pixels",
   "license": "Apache-2.0",
   "icon": "assets/logo/logo.png",
   "engines": {
